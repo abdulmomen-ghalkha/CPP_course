@@ -58,9 +58,9 @@ void brighten(PNG & original, int amount)
     {
       for (size_t xi = 0; xi < original.width(); xi++){
 	      // Your code here
-        original(xi, yi).red =  original(xi, yi).red + amount > 255? 255 :  original(xi, yi).red + amount;
-        original(xi, yi).green =  original(xi, yi).green + amount > 255? 255 :  original(xi, yi).green + amount;
-        original(xi, yi).blue =  original(xi, yi).blue + amount > 255? 255 :  original(xi, yi).blue + amount; 
+        original(xi, yi).red =  std::min(original(xi, yi).red + amount, 255);
+        original(xi, yi).green =  std::min(original(xi, yi).green + amount, 255);
+        original(xi, yi).blue =  std::min(original(xi, yi).blue + amount, 255);
       }
     }
 }
