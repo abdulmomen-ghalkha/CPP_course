@@ -73,7 +73,7 @@ void Flower::draw(PNG& canvas) const
 {
 	stem.draw(canvas);
 	pistil.draw(canvas);
-	leaf->draw(canvas);
+	leaf.draw(canvas);
 	for (int x = 0; x < PISTIL_RADIUS; x++)
 	{
 		const double radius2 = PISTIL_RADIUS * PISTIL_RADIUS;

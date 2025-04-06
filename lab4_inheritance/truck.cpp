@@ -121,4 +121,15 @@ void Truck::clear()
 }
 
 
+void Truck::draw(PNG& canvas) const
+{
+	trailer.draw(canvas);
+	cabin.draw(canvas);
+	window.draw(canvas);
+	engine.draw(canvas);
+	for (auto it:wheels) {
+		it.draw(canvas);
+	}
+}
+
 
