@@ -9,13 +9,14 @@
 #define FLOWER_H_
 
 #include "shape.h"
+#include <memory>
 
 class Flower : public Drawable
 {
 	private:
-		Shape stem;
-		Shape pistil;  // center piece of flower
-		Shape leaf;
+		std::shared_ptr<Shape> stem;
+		std::shared_ptr<Shape> pistil;  // center piece of flower
+		std::shared_ptr<Shape> leaf;
 
 		void drawPedals(PNG& canvas, const Vector2& center, int x, int y) const;
 	public:
