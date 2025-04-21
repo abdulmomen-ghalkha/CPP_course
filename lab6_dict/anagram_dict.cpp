@@ -29,7 +29,10 @@ AnagramDict::AnagramDict(const string& filename)
         while (getline(words_file, word)) {
             std::string key = word;
             std::sort(key.begin(), key.end());
-            dict[key].push_back(word);
+            auto& anagram_list = dict[key];
+            if (std::find(anagram_list.begin(), anagram_list.end(), word) == anagram_list.end()) {
+                anagram_list.push_back(word);
+            }
         }
     }
 }
@@ -44,7 +47,11 @@ AnagramDict::AnagramDict(const vector< string >& words)
     for (const std::string& word : words) {
         std::string key = word;
         std::sort(key.begin(), key.end());
-        dict[key].push_back(word);
+        
+        auto& anagram_list = dict[key];
+        if (std::find(anagram_list.begin(), anagram_list.end(), word) == anagram_list.end()) {
+            anagram_list.push_back(word);
+        }
     }
 }
 
