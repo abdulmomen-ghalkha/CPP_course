@@ -103,7 +103,7 @@ struct Color
 
 constexpr Color MAROON = Color(128, 0, 0);
 constexpr Color DARK_RED = Color(139, 0, 0);
-constexpr Color BROWN = Color(165, 42, 42);
+constexpr Color ROSY_BROWN = Color(165, 42, 42);
 constexpr Color FIRE_BRICK = Color(178, 34, 34);
 constexpr Color CRIMSON = Color(220, 20, 60);
 constexpr Color RED = Color(255, 0, 0);
@@ -208,7 +208,7 @@ constexpr Color PERU = Color(205, 133, 63);
 constexpr Color SANDY_BROWN = Color(244, 164, 96);
 constexpr Color BURLY_WOOD = Color(222, 184, 135);
 constexpr Color TAN = Color(210, 180, 140);
-constexpr Color ROSY_BROWN = Color(188, 143, 143);
+constexpr Color BROWN = Color(188, 143, 143);
 constexpr Color MOCCASIN = Color(255, 228, 181);
 constexpr Color NAVAJO_WHITE = Color(255, 222, 173);
 constexpr Color PEACH_PUFF = Color(255, 218, 185);
