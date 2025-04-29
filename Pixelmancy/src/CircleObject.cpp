@@ -1,17 +1,25 @@
 #include "CircleObject.hpp"
 #include "Common.hpp"
 #include "Image.hpp"
-
+#include <iostream>
 namespace pixelmancy::graphics {
 
 CircleObject::CircleObject(int radius, int outlineWidth, const Color& fillColor, const Color& outlineColor)
  : FilledShape(fillColor, outlineColor, outlineWidth), m_radius(radius)
 {
-    m_position = {m_radius - 1, m_radius - 1};
+    m_position = {50, 50};//{m_radius - 1, m_radius - 1};
+    
+
+}
+ObjectType CircleObject::getObjectType() const {
+    return ObjectType::CIRCLE;
 }
 
 void CircleObject::drawOn(Image& image) const
 {
+
+    
+    std::cout << m_position.x << "  " << m_position.y << "  " << m_radius << std::endl; 
     const int startCol = m_position.y - m_radius;
     const int endCol = m_position.y + m_radius;
     const int startRow = m_position.x - m_radius;
@@ -20,6 +28,7 @@ void CircleObject::drawOn(Image& image) const
     const int innerCircleDistance = (m_radius - m_outlineWidth) * (m_radius - m_outlineWidth);
     int x = 0;
     int y = 0;
+
     const int imageWidth = image.getWidth();
     const int imageHeight = image.getHeight();
     for (int i = startRow; i < endRow; i++)

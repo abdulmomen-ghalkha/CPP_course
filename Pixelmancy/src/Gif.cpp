@@ -5,6 +5,7 @@
 #include "CommonConfig.hpp"
 #include "Log.hpp"
 #include "colors/ColorMatcher.hpp"
+#include <iostream>
 
 namespace pixelmancy {
 
@@ -20,10 +21,13 @@ Gif::~Gif()
 
 void Gif::close()
 {
+    
     if (pGIF)
     {
         cgif_close(pGIF);
     }
+    pGIF = nullptr;
+    std::cout << "Closing CGIF: " << pGIF << std::endl;
     m_localToGlobalMappings.clear();
 }
 

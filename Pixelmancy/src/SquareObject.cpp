@@ -7,6 +7,11 @@ SquareObject::SquareObject(sizei2d size2d, int outlineWidth, const Color& fillCo
 {
 }
 
+ObjectType SquareObject::getObjectType() const
+{
+    return ObjectType::SQUARE;
+}
+
 void SquareObject::drawOn(Image& image) const
 {
     const Point pos = m_position;

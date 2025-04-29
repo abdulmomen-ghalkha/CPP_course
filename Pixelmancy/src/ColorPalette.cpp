@@ -14,6 +14,13 @@ ColorPallette::ColorPallette(std::vector<Color>& colors)
     }
 };
 
+ColorPallette::ColorPallette(ColorPallette&& other) {
+    m_Colors = std::move(other.m_Colors);
+    m_ColorToIndexMap = std::move(other.m_ColorToIndexMap);
+    m_foundColors = std::move(other.m_foundColors);
+    //std::cout << "Move const triggered"<<std::endl;
+}
+
 ColorPallette& ColorPallette::operator=(const ColorPallette& other)
 {
     if (this != &other)
@@ -22,6 +29,7 @@ ColorPallette& ColorPallette::operator=(const ColorPallette& other)
         m_ColorToIndexMap = other.m_ColorToIndexMap;
         m_foundColors = other.m_foundColors;
     }
+    //std::cout << "Move const triggered"<<std::endl;
     return *this;
 }
 
@@ -43,7 +51,7 @@ bool ColorPallette::operator==(const ColorPallette& other) const
 
 bool ColorPallette::operator!=(const ColorPallette& other) const
 {
-    return *this == other;
+    return !(*this == other);
 }
 
 ColorPallette& ColorPallette::operator=(ColorPallette&& other)

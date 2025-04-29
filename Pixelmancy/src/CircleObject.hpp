@@ -17,6 +17,7 @@ class CircleObject final : public FilledShape
 public:
     CircleObject(int radius, int m_outlineWidth, const Color& fillColor, const Color& outlineColor);
     void drawOn(Image& image) const;
+    virtual ObjectType getObjectType() const;
     
 private:
     int m_radius;

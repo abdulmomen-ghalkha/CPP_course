@@ -1,10 +1,11 @@
 #include "Circle.hpp"
 #include <logger/Log.hpp>
-
+#include <iostream>
 namespace pixelmancy::graphics {
 
 Circle::Circle(const Point& center, int radius, const Color& color) : LineArt(std::move(color)), m_center(std::move(center)), m_radius(radius)
 {
+
 }
 
 // mid point circle drawing algorithm

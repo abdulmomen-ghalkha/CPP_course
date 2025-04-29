@@ -25,7 +25,7 @@ public:
     ~ColorPallette() = default;
 
     ColorPallette(const ColorPallette& other) = default;
-    ColorPallette(ColorPallette&& other) = default;
+    ColorPallette(ColorPallette&& other);
 
     ColorPallette& operator=(const ColorPallette& other);
     ColorPallette& operator=(ColorPallette&& other);

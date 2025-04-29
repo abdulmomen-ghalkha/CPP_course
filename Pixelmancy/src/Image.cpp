@@ -5,6 +5,7 @@
 #include "PNG.hpp"
 
 #include <memory>
+#include<iostream>
 
 namespace pixelmancy {
 
@@ -68,6 +69,8 @@ Image::Image(Image&& other) noexcept
 {
     // It is not necessary to reset the other object, but the author of this code
     // prefers to do so to make it clear that the object is in a moved-from state.
+    other.m_imageDimensions = {0, 0};  // or whatever default makes sense
+    other.m_pixels.clear();
     other.m_colorPalette.reset();
 }
 
