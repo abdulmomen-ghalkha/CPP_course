@@ -130,8 +130,8 @@ Image Image::resize(double percentage) const
         P_LOG_ERROR() << "Invalid image dimensions after resize\n";
         return *(new Image(0, 0));
     }
-    double scaleX = 2;
-    double scaleY = 2;
+    double scaleX = static_cast<double>(m_imageDimensions.width) / width;;
+    double scaleY = static_cast<double>(m_imageDimensions.height) / height;;
     Image newImage(width, height, WHITE);
     // P_LOG_DEBUG() << fmt::format("Resizing image from {}x{} to {}x{}\n", m_imageDimensions.width, m_imageDimensions.height, width, height);
     // P_LOG_DEBUG() << fmt::format("Width scale : {} Height scale : {}\n", widthScale, heightScale);
